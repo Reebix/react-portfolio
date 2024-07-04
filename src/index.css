@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding around the text */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* No underline on the text */
+  display: inline-block; /* Allow setting dimensions */
+  font-size: 16px; /* Text size */
+  margin: 4px 2px; /* Margin around the button */
+  transition: background-color 0.3s; /* Smooth background color change on hover */
+  cursor: pointer; /* Change mouse cursor to pointer */
+  border-radius: 5px; /* Rounded corners */
+  max-lines: 1; /* Maximum number of lines before text wraps */
+  text-wrap: nowrap; /* No text wrapping */
+
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue background on hover */
+}
+
+input {
+  padding: 10px; /* Padding around the text */
+  margin: 4px 2px; /* Margin around the input */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Gray border */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%; /* Set the width to 100% of the parent container */
+}
