@@ -38,7 +38,8 @@ input {
   padding: 10px; /* Padding around the text */
   margin: 4px 2px; /* Margin around the input */
   border-radius: 5px; /* Rounded corners */
-  border: 1px solid #ccc; /* Gray border */
+  border: 1px solid #060606; /* Gray border */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   width: 100%; /* Set the width to 100% of the parent container */
+  background-color: gray;
 }
