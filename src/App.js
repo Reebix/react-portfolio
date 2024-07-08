@@ -9,9 +9,12 @@ import image from './image.png'
 window.addEventListener('scroll', function() {
   // Get the scroll direction and amount
   var scrollTop = - window.scrollY * 0.025;
+  var scrollTop2 = - window.scrollY * 0.0125;
 
   // Apply the new top value to the .App-body element
   document.querySelector('.bg-stars').style.top = `${scrollTop}vmin`;
+document.querySelector('.bg-stars-two').style.top = `${scrollTop+10}vmin`;
+
 });
 
 
@@ -25,6 +28,7 @@ function App() {
       </header>
 
       <div className="bg-stars"> </div>
+       <div className="bg-stars-two"> </div>
 
 
       <body className="App-body">
