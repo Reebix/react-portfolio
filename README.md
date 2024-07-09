@@ -1,2 +1,2 @@
 # Portfolio 
-This is gonna be my portfolio :) 
+This is gonna be my game dev portfolio :) 
