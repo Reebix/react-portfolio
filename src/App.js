@@ -4,7 +4,6 @@ import './loading-icon.css'
 import image from './image.png'
 
 
-
 // Listen for scroll events on the window
 window.addEventListener('scroll', function() {
   // Get the scroll direction and amount
@@ -23,8 +22,7 @@ function App() {
   return (
     <div className="App" style={{bottom: 0, left: 0, width: '100%'}}>
       <header className="App-header">
-
-      
+  
       </header>
 
       <div className="bg-stars"> </div>
