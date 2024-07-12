@@ -24,13 +24,9 @@ function App() {
       <header className="App-header">
   
       </header>
-
       <div className="bg-stars"> </div>
        <div className="bg-stars-two"> </div>
-
-
       <body className="App-body">
-
         <h1>Header 1</h1>
           Lorem ipsum dolor sit amet est stet tation. Sadipscing stet erat ut eu amet et vel consetetur sed augue eum vel. Sadipscing at dolor molestie sanctus labore nulla ipsum aliquyam gubergren dolore dolor sanctus sanctus facilisi. Nonumy eirmod takimata at eirmod in feugiat vulputate sit eirmod no adipiscing lorem in diam aliquyam amet accumsan. Et gubergren dolor sea nibh erat diam blandit justo doming aliquyam diam te stet. Ut ullamcorper ipsum nisl et molestie dolor erat dolore dolores no eos duis eros.
           <br /> <br />
@@ -73,9 +69,7 @@ function App() {
           <br /> <br />
           Id et tempor tempor ea ut stet ea ex aliquyam elitr. Sit sanctus magna sadipscing ea diam dolore nonumy. Nonumy at placerat sit dolore erat takimata gubergren veniam hendrerit stet quod magna et sed sadipscing nostrud aliquyam vero. Amet et rebum at velit est ea diam eu tempor diam sed tempor aliquip odio elitr rebum et. Facilisi sanctus est eirmod feugait sanctus. Voluptua eos diam qui no gubergren sanctus augue vulputate esse rebum ut amet sed rebum rebum amet. Lorem invidunt nonumy justo clita ea erat et. Et et sed. Nonumy aliquyam consetetur rebum elitr tempor rebum sed erat et sanctus ea est. Aliquyam in sanctus euismod sadipscing gubergren nonumy gubergren voluptua ipsum sea gubergren voluptua ipsum te rebum. Diam takimata sit. Accusam nonumy duis et imperdiet dolore ea. Rebum et lorem sed invidunt amet vero sed gubergren sed dolor est.
           <br /> <br />
-        
     </body>
-    
     </div>
   );
 }
