@@ -3,7 +3,6 @@ import './App.css';
 import './loading-icon.css'
 import image from './image.png'
 
-
 // Listen for scroll events on the window
 window.addEventListener('scroll', function() {
   // Get the scroll direction and amount
@@ -13,9 +12,7 @@ window.addEventListener('scroll', function() {
   // Apply the new top value to the .App-body element
   document.querySelector('.bg-stars').style.top = `${scrollTop}vmin`;
 document.querySelector('.bg-stars-two').style.top = `${scrollTop}vmin`;
-
 });
-
 
 // run using docker-compose up
 function App() {
@@ -75,6 +72,7 @@ function App() {
 }
 
 /*
+// parses a string to html
 function createMarkup(text) {
   return { __html: text };
 }
