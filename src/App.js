@@ -1,7 +1,5 @@
 /* import React, { useState, useEffect } from 'react'; */
 import './App.css';
-import './loading-icon.css'
-import image from './image.png'
 
 // Listen for scroll events on the window
 window.addEventListener('scroll', function() {
