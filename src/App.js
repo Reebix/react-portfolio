@@ -11,7 +11,7 @@ window.addEventListener('scroll', function() {
   document.querySelector('.bg-stars').style.top = `${scrollTop}vmin`;
 document.querySelector('.bg-stars-two').style.top = `${scrollTop}vmin`;
 });
-
+//<div className="bg-stars-two"> </div>
 // run using docker-compose up
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
   
       </header>
       <div className="bg-stars"> </div>
-       <div className="bg-stars-two"> </div>
+       
       <body className="App-body">
         <h1>Header 1</h1>
           Lorem ipsum dolor sit amet est stet tation. Sadipscing stet erat ut eu amet et vel consetetur sed augue eum vel. Sadipscing at dolor molestie sanctus labore nulla ipsum aliquyam gubergren dolore dolor sanctus sanctus facilisi. Nonumy eirmod takimata at eirmod in feugiat vulputate sit eirmod no adipiscing lorem in diam aliquyam amet accumsan. Et gubergren dolor sea nibh erat diam blandit justo doming aliquyam diam te stet. Ut ullamcorper ipsum nisl et molestie dolor erat dolore dolores no eos duis eros.
