@@ -32,7 +32,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background-repeat: repeat;
+
+  background-repeat: repeat-y;
+  
+ 
 }
 
 
@@ -42,32 +45,21 @@
 
 .bg-stars {
  /* The image used */
- background-image: url("image.png");
 
  position: fixed;
-
  top: 0vmin;
   left: 0;
 
- /* Add the blur effect */
- filter: blur(8px);
- -webkit-filter: blur(8px);
- 
- /* Full height */
- height: 100vmin; 
- width: 100%;
- 
- /* Center and scale the image nicely */
- background-position: center;
- background-repeat: repeat;
- background-size: cover;
+ /* Add the blur effect 
+ filter: blur(2px);
+ -webkit-filter: blur(2px);
+*/
 
  z-index: -1;
 }
 
 .bg-stars-two {
  /* The image used */
- background-image: url("image.png");
 
  position: fixed;
 
@@ -84,7 +76,7 @@
  
  /* Center and scale the image nicely */
  background-position: center;
- background-repeat: repeat;
+ background-repeat: repeat-y;
  background-size: cover;
 
  z-index: -2;

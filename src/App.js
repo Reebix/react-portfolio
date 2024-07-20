@@ -1,27 +1,110 @@
 /* import React, { useState, useEffect } from 'react'; */
+import React, { useEffect } from 'react';
 import './App.css';
+import { useReducer } from 'react';
+import { useRef } from 'react';
 
-// Listen for scroll events on the window
-window.addEventListener('scroll', function() {
-  // Get the scroll direction and amount
-  var scrollTop = - window.scrollY * 0.025;
-  var scrollTop2 = - window.scrollY * 0.0125+15;
 
-  // Apply the new top value to the .App-body element
-  document.querySelector('.bg-stars').style.top = `${scrollTop}vmin`;
-document.querySelector('.bg-stars-two').style.top = `${scrollTop}vmin`;
-});
-//<div className="bg-stars-two"> </div>
+
+
+//
 // run using docker-compose up
 function App() {
+  
+const canvasRef = useRef(null);
+
+useEffect(() => {
+  
+const canvas = canvasRef.current;
+const ctx = canvas.getContext('2d');
+var width = canvas.width = window.innerWidth * 1.1;
+var height = canvas.height = window.innerHeight *3;
+const numStars = 1000;
+var stars = [];
+
+
+for (let i = 0; i < numStars; i++) {
+  stars.push({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    radius: Math.random() * 1.5 + 1,
+    color: 'white'
+  });
+}
+
+
+function drawStar(star) {
+  ctx.beginPath();
+  ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+  ctx.fillStyle = star.color;
+  ctx.fill();
+}
+
+function drawStars() {
+  ctx.clearRect(0, 0, width, height);
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, width, height);
+  stars.forEach(star => {
+    drawStar(star);
+  });
+}
+
+
+drawStars();
+
+
+const handleScroll = () => {
+  stars.forEach(star => {
+    star.x -= 50;
+    if (star.x < 0) {
+      star.x = width + star.x;
+    }
+  });
+
+  drawStars();
+}
+
+const handleResize = () => {
+   width = canvas.width = window.innerWidth;
+   height = canvas.height = window.innerHeight;
+   stars = [];
+   for (let i = 0; i < numStars; i++) {
+    stars.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 1.5 + 1,
+      color: 'white'
+    });
+  }
+  drawStars();
+}
+
+window.addEventListener('scroll', handleScroll)
+window.addEventListener('resize', handleResize)
+return () =>{
+  window.removeEventListener("resize", handleResize);
+  window.removeEventListener("scroll", handleScroll);
+} 
+
+
+}, []);
+
   return (
     <div className="App" style={{bottom: 0, left: 0, width: '100%'}}>
       <header className="App-header">
   
       </header>
-      <div className="bg-stars"> </div>
-       
+
+      
       <body className="App-body">
+        
+      <canvas ref={canvasRef} className="bg-stars"></canvas>
+
+
+  
+
+
+      
         <h1>Header 1</h1>
           Lorem ipsum dolor sit amet est stet tation. Sadipscing stet erat ut eu amet et vel consetetur sed augue eum vel. Sadipscing at dolor molestie sanctus labore nulla ipsum aliquyam gubergren dolore dolor sanctus sanctus facilisi. Nonumy eirmod takimata at eirmod in feugiat vulputate sit eirmod no adipiscing lorem in diam aliquyam amet accumsan. Et gubergren dolor sea nibh erat diam blandit justo doming aliquyam diam te stet. Ut ullamcorper ipsum nisl et molestie dolor erat dolore dolores no eos duis eros.
           <br /> <br />
@@ -65,6 +148,7 @@ function App() {
           Id et tempor tempor ea ut stet ea ex aliquyam elitr. Sit sanctus magna sadipscing ea diam dolore nonumy. Nonumy at placerat sit dolore erat takimata gubergren veniam hendrerit stet quod magna et sed sadipscing nostrud aliquyam vero. Amet et rebum at velit est ea diam eu tempor diam sed tempor aliquip odio elitr rebum et. Facilisi sanctus est eirmod feugait sanctus. Voluptua eos diam qui no gubergren sanctus augue vulputate esse rebum ut amet sed rebum rebum amet. Lorem invidunt nonumy justo clita ea erat et. Et et sed. Nonumy aliquyam consetetur rebum elitr tempor rebum sed erat et sanctus ea est. Aliquyam in sanctus euismod sadipscing gubergren nonumy gubergren voluptua ipsum sea gubergren voluptua ipsum te rebum. Diam takimata sit. Accusam nonumy duis et imperdiet dolore ea. Rebum et lorem sed invidunt amet vero sed gubergren sed dolor est.
           <br /> <br />
     </body>
+    
     </div>
   );
 }
