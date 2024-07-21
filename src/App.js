@@ -17,8 +17,9 @@ useEffect(() => {
   
 const canvas = canvasRef.current;
 const ctx = canvas.getContext('2d');
-var width = canvas.width = window.innerWidth * 1.1;
+var width = canvas.width = window.innerWidth * 1.2;
 var height = canvas.height = window.innerHeight *3;
+  // TODO: get a equal amount for area
 const numStars = 1000;
 var stars = [];
 
