@@ -19,8 +19,10 @@ const canvas = canvasRef.current;
 const ctx = canvas.getContext('2d');
 var width = canvas.width = window.innerWidth * 1.2;
 var height = canvas.height = window.innerHeight *3;
+var area = width * height;
+var starsPerArea = 0.0001;
   // TODO: get a equal amount for area
-const numStars = 1000;
+var numStars = area * starsPerArea;
 var stars = [];
 
 
@@ -68,6 +70,12 @@ const handleScroll = () => {
 const handleResize = () => {
    width = canvas.width = window.innerWidth;
    height = canvas.height = window.innerHeight;
+    area = width * height;
+ 
+    starsPerArea = 0.0001;
+     // TODO: get a equal amount for area
+    numStars = area * starsPerArea;
+
    stars = [];
    for (let i = 0; i < numStars; i++) {
     stars.push({
