@@ -50,10 +50,8 @@
  top: 0vmin;
   left: 0;
 
- /* Add the blur effect 
- filter: blur(2px);
- -webkit-filter: blur(2px);
-*/
+ filter: blur(1px);
+ -webkit-filter: blur(1px);
 
  z-index: -1;
 }

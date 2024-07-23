@@ -1,7 +1,6 @@
 /* import React, { useState, useEffect } from 'react'; */
 import React, { useEffect } from 'react';
 import './App.css';
-import { useReducer } from 'react';
 import { useRef } from 'react';
 
 
@@ -20,7 +19,7 @@ const ctx = canvas.getContext('2d');
 var width = canvas.width = window.innerWidth * 1.2;
 var height = canvas.height = window.innerHeight *3;
 var area = width * height;
-var starsPerArea = 0.0001;
+var starsPerArea = 0.00015;
   // TODO: get a equal amount for area
 var numStars = area * starsPerArea;
 var stars = [];
@@ -53,18 +52,49 @@ function drawStars() {
 }
 
 
-drawStars();
+//drawStars();
+var targetOffset = 0;
+var currentOffset = 0;
+var lastScrollY = window.scrollY;
+
+const handelTick = () => {
+  var scrollY = window.scrollY;
+
+  targetOffset += (lastScrollY - scrollY)  *0.2;
+  
+  lastScrollY = scrollY;
 
 
-const handleScroll = () => {
+  // lerping with a max value
+  var lerp = (targetOffset - currentOffset) * 0.1;
+  lerp = Math.min(lerp, 40);
+  
+  
+  currentOffset += lerp;
+
   stars.forEach(star => {
-    star.x -= 50;
+    // todo optimize
+    star.x -= lerp;
+    star.y -= lerp;
     if (star.x < 0) {
       star.x = width + star.x;
+    }
+    if (star.y < 0) {
+      star.y = height + star.y;
+    }
+
+    if (star.x > width) {
+      star.x = star.x - width;
+    }
+
+    if (star.y > height) {
+      star.y = star.y - height;
     }
   });
 
   drawStars();
+
+  window.requestAnimationFrame(handelTick);
 }
 
 const handleResize = () => {
@@ -85,14 +115,14 @@ const handleResize = () => {
       color: 'white'
     });
   }
-  drawStars();
+  //drawStars();
 }
 
-window.addEventListener('scroll', handleScroll)
 window.addEventListener('resize', handleResize)
+window.requestAnimationFrame(handelTick);
 return () =>{
   window.removeEventListener("resize", handleResize);
-  window.removeEventListener("scroll", handleScroll);
+  
 } 
 
 
