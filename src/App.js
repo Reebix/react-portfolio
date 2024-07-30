@@ -19,7 +19,7 @@ const ctx = canvas.getContext('2d');
 var width = canvas.width = window.innerWidth * 1.2;
 var height = canvas.height = window.innerHeight *3;
 var area = width * height;
-var starsPerArea = 0.00015;
+var starsPerArea = 0.0002;
   // TODO: get a equal amount for area
 var numStars = area * starsPerArea;
 var stars = [];
