@@ -29,7 +29,7 @@ for (let i = 0; i < numStars; i++) {
   stars.push({
     x: Math.random() * width,
     y: Math.random() * height,
-    radius: Math.random() * 1.5 + 1,
+    radius: Math.random() * 2.5 + 0.5,
     color: 'white'
   });
 }
